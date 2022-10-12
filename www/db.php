@@ -1,4 +1,6 @@
 <?php
+// GRANT ALL PRIVILEGES ON CatiumPan.* TO 'web'@'localhost' IDENTIFIED BY 'passwd' WITH GRANT OPTION;
+
 function exec_sql($sql)
 {
     $dbtype = "mysql";
@@ -15,9 +17,12 @@ function exec_sql($sql)
         foreach (new RecursiveArrayIterator($stmt->fetchAll()) as $k => $v) {
             array_push($arr, $v);
         }
+        // if(empty($arr)){
+        //     return true;
+        // }
+        return $arr;
     } catch (PDOException $e) {
-        // echo '{"status":"failed","result":"' . $e->getMessage() . '"}<br>';
+        echo '{"status":"failed","result":"' . $e->getMessage() . '"}<br>';
         return false;
     }
-    return $arr;
 }
