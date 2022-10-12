@@ -17,8 +17,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `user_name_UNIQUE` (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
-
-
 CREATE TABLE `files` (
   `file_res` varchar(32) NOT NULL,
   `file_download_count` int DEFAULT NULL,
@@ -28,6 +26,3 @@ CREATE TABLE `files` (
   PRIMARY KEY (`file_res`),
   UNIQUE KEY `files_res_UNIQUE` (`file_res`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
-
-
