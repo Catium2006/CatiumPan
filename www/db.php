@@ -22,7 +22,8 @@ function exec_sql($sql)
         // }
         return $arr;
     } catch (PDOException $e) {
-        echo '{"status":"failed","result":"' . $e->getMessage() . '"}<br>';
+        // echo $sql;
+        echo '{"status":"failed","result":"' . $e->getMessage() . '","sql":"' . $sql . '"}<br>';
         return false;
     }
 }
