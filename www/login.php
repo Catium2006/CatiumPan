@@ -25,8 +25,9 @@ if (!empty($_POST)) {
     </head>
 
     <body>
-        <div style="background-color:gray;margin:0 auto;width:25%;">
+        <div style="background-color:gray;margin:0 auto;width:30%;">
             <p>登录</p>
+            <a href="/register.php">注册</a>
             <form action="login.php" method="post">
                 用户名: <input type="text" name="user_name"><br>
                 密码: <input type="password" name="user_password"><br>

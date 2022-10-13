@@ -51,7 +51,7 @@ if (!empty($_POST)) {
     </head>
 
     <body>
-        <div style="background-color:gray;margin:0 auto;width:25%;">
+        <div style="background-color:gray;margin:0 auto;width:30%;">
             <p>注册</p>
             <form action="register.php" method="post">
                 邮箱: <input type="text" name="user_email"><br>
