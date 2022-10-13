@@ -21,7 +21,7 @@ if ($_GET['file_id']) {
             header("Accept-Length: " . $file_size);
             header("Content-Disposition: attachment; filename=" . $file_name);
             $file = fopen('res/' . $file_res, "rb");
-            echo fread($file, $file_size + 1024);
+            echo fread($file, $file_size);
             fclose($file);
         }
     } else {
