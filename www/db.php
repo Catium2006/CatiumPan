@@ -17,9 +17,6 @@ function exec_sql($sql)
         foreach (new RecursiveArrayIterator($stmt->fetchAll()) as $k => $v) {
             array_push($arr, $v);
         }
-        // if(empty($arr)){
-        //     return true;
-        // }
         return $arr;
     } catch (PDOException $e) {
         // echo $sql;

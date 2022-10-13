@@ -18,6 +18,10 @@ if (is_logined()) {
             $file_max_download_count = $_POST['file_max_download_count'];
         }
         move_uploaded_file($file["tmp_name"], "res/" . $file_res);
+        // 如果要做有时效性的
+        // $file_deadline = "TIMESTAMP(CURRENT_TIMESTAMP + $alive_time_sec)";
+        $sql = "UPDATE users SET user_upload_file_count = user_upload_file_count + 1";
+        exec_sql($sql);
         $sql = "INSERT INTO files (file_res,file_name,file_uploader_uuid,file_max_download_count) VALUES('$file_res','$file_name','$file_uploader_uuid','$file_max_download_count')";
         exec_sql($sql);
         $file_id = exec_sql("SELECT file_id from files WHERE file_res = '" . $file_res . "'")[0]['file_id'];
