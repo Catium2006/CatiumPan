@@ -10,7 +10,7 @@ if (is_logined()) {
     if ($file["error"] > 0) {
         echo '{"status":"failed","why":"' . $file["error"] . '"}';
     } else {
-        $file_res = md5_file($file["tmp_name"]);
+        $file_res = md5(md5_file($file["tmp_name"]) . microtime());
         $file_name = $file['name'];
         $file_uploader_uuid = $_COOKIE['uuid'];
         $file_max_download_count = 1;
