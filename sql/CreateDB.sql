@@ -21,13 +21,13 @@ CREATE TABLE `files` (
   `file_id` int NOT NULL AUTO_INCREMENT,
   `file_res` varchar(32) NOT NULL,
   `file_name` varchar(64) DEFAULT NULL,
-  `file_download_count` int DEFAULT '0',
   `file_uploader_uuid` varchar(32) DEFAULT NULL,
+  `file_download_count` int DEFAULT '0',
   `file_max_download_count` int DEFAULT NULL,
   `file_timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`file_id`,`file_res`),
-  UNIQUE KEY `files_res_UNIQUE` (`file_res`),
   UNIQUE KEY `file_id_UNIQUE` (`file_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+
 
 
